@@ -1,0 +1,39 @@
+<div class="container">
+    <p class="title">List country management</p>
+    <form action="post" action="admin/country-create" class="form" enctype="multipart/form-data">
+        <div class="title-form">
+            <h3>Add country</h3>
+        </div>
+        <div class="countryimage">
+            <label for="" class="countryimage">Add flag of country</label>
+            <input type="file" name="image" class="countryflag">
+        </div>
+        <div class="countryname">
+            <label for="contryname" class="countryname">Enter countryname</label>
+            <input type="text" class="countryname">
+        </div>
+        <div class="dialcode">
+            <label for="dialcode" class="dialcode">Enter dial_code</label>
+            <input type="text" class="dialcode">
+        </div>
+        <div class="submit">
+            <input type="submit" class="submit" value="send">
+        </div>
+    </form>
+    <hr>
+    <h4>List country</h4>
+    {{#if country}}
+        {{#each country}}
+        <div class="country__item">
+            <img src="" alt="country image">
+            <p class="countryname">{{country.countryname}}</p>
+            <p class="dial_code">{{country.dialcode}}</p>
+        </div>
+        {{/each}}
+    {{#else}}
+        <div class="notification"></div>
+    {{/if}}
+</div>
+
+
+
